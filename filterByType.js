@@ -9,8 +9,9 @@
 const getBeers = require('./data')
 
 function main(type) {
-    console.log('type:', type)
-
+  console.log('type:', type)
+  const filteredBeers = getBeers().filter((beer) => beer.type.includes(type)).map((beer) => `NAME: ${beer.name} TYPE: ${beer.type}`);
+  console.log(filteredBeers);
 }
 
 main(process.argv[2])

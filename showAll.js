@@ -6,6 +6,7 @@
 const getBeers = require('./data')
 
 function main() {
+    getBeers().forEach((beer) => console.log(`${beer.name} (${beer.brewery})`));
 }
 
 main()

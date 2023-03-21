@@ -16,8 +16,12 @@
 const getBeers = require('./data')
 
 function main(property) {
+  if(property === 'score') {
     console.log('property:', property)
-
+    getBeers().sort((a, b) => a.score - b.score).map((beer) => console.log(`${beer.name} (score: ${beer.score}, abv: ${beer.abv})`))
+  } else if (property === 'abv') {
+    getBeers().sort((a, b) => a.abv - b.abv).map((beer) => console.log(`${beer.name} (score: ${beer.score}, abv: ${beer.abv})`))
+  }
 }
 
 main(process.argv[2])

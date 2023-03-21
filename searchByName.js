@@ -10,7 +10,10 @@ const getBeers = require('./data')
 
 function main(keyword) {
     console.log('keyword:', keyword)
-    // Tip: string.prototype.includes()
+    const filteredBeers = getBeers().filter((beer) => beer.name.includes(keyword));
+    const displayBeers = filteredBeers.map(function (beer) {
+      console.log(`${beer.name} (${beer.brewery})`);
+    });
 }
 
 main(process.argv[2])
